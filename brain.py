@@ -3,6 +3,7 @@ from google import genai
 from ddgs import DDGS
 
 gemini_client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+MODEL = "gemini-3.5-flash-lite"
 
 SYSTEM_PROMPT = """You are a helpful assistant.
 If the question needs current/recent info, use the provided web search results.
