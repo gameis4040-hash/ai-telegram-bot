@@ -1,3 +1,4 @@
+import os
 import asyncio
 import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -5,7 +6,7 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 from brain import get_answer
 
-TOKEN = "BOT_TOKEN"
+TOKEN = os.environ["BOT_TOKEN"]
 
 # --- health check server (keeps Render happy + gives cron-job a URL to ping) ---
 def run_health_server():
